@@ -41,7 +41,7 @@ fun MainContent(
         .padding(innerPadding),
 ) {
     val text by mainViewModel.flow.collectAsStateWithLifecycle()
-    ShowNews(text.toString())
+    ShowNews(text)
 }
 
 @Preview(showBackground = true)

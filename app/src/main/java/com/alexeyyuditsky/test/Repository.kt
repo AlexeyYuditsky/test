@@ -4,9 +4,9 @@ import kotlinx.coroutines.delay
 
 class Repository {
 
-    suspend fun getNews(page: Int): List<String> {
+    suspend fun getNews(page: Int): String {
         delay(1000)
-        return listOf("$page")
+        return "page: $page"
     }
 
 }

@@ -10,7 +10,7 @@ data class User(
 
 fun requestUser(func: (User) -> Unit) {
     thread {
-        Thread.sleep(5000)
+        Thread.sleep(2000)
         func.invoke(User())
     }
 }

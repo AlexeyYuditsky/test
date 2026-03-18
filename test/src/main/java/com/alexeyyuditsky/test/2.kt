@@ -1,23 +1,17 @@
 package com.alexeyyuditsky.test
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-import kotlin.concurrent.thread
 
-fun main() {
-    thread(isDaemon = true) {
-        Thread.sleep(1000L)
-        println("World!")
+suspend fun main() {
+    coroutineScope {
+        launch(context = CoroutineName("one") + Job() + Dispatchers.Default + SupervisorJob() + CoroutineExceptionHandler { context, throwable ->  }) {
+
+        }
     }
-    thread(isDaemon = true) {
-        Thread.sleep(1000L)
-        println("World!")
-    }
-    thread(isDaemon = true) {
-        Thread.sleep(1000L)
-        println("World!")
-    }
-    println("Hello,")
-    Thread.sleep(2000L)
 }

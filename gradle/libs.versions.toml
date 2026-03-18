@@ -1,14 +1,14 @@
 [versions]
-agp = "8.13.2"
-coreKtx = "1.17.0"
+agp = "9.1.0"
+coreKtx = "1.18.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.10.0"
-activityCompose = "1.12.3"
-kotlin = "2.3.0"
-composeBom = "2026.01.01"
-jetbrainsKotlinJvm = "2.3.0"
+activityCompose = "1.13.0"
+kotlin = "2.3.20"
+composeBom = "2026.03.00"
+jetbrainsKotlinJvm = "2.3.20"
 coroutines = "1.10.2"
 jbcrypt = "0.4"
 
@@ -34,5 +34,4 @@ jbcrypt = { group = "org.mindrot", name = "jbcrypt", version.ref = "jbcrypt" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }

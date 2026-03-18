@@ -16,4 +16,5 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
 
     implementation(libs.jbcrypt)
+    implementation(kotlin("test"))
 }

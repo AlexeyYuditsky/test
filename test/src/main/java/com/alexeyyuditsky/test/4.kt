@@ -1,9 +1,11 @@
 package com.alexeyyuditsky.test
 
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.coroutineScope
+fun getLongestWord(str: String) = str
+    .split("[^\\p{L}]+".toRegex())
+    .maxByOrNull { it.length }
 
-suspend fun main(): Unit = coroutineScope {
-    val job: Job = Job()
-    println(job.start())
+fun main() {
+    println(getLongestWord("Большой цветок"))
+    println(getLongestWord("Я люблю печеньки"))
+    println(getLongestWord("На улице сегодня солнечно, дождя нет"))
 }

@@ -1,20 +1,17 @@
 package com.alexeyyuditsky.test
 
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelAndJoin
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
-suspend fun main() = coroutineScope {
-    val job = launch {
-        repeat(1_000) { i ->
-            delay(100)
-            Thread.sleep(100) // We simulate long operation
-            println("Printing $i")
+fun main() {
+    runBlocking(Dispatchers.Default) {
+        launch {
+            while (true) {
+                println("first ${Thread.currentThread().name}")
+            }
+        }
+
+        launch {
+            println("second ${Thread.currentThread().name}")
         }
     }
-    delay(1000)
-    job.cancelAndJoin()
-    println("Cancelled successfully")
 }

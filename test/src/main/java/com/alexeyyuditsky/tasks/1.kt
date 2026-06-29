@@ -1,4 +1,4 @@
-package com.alexeyyuditsky.test
+package com.alexeyyuditsky.tasks
 
 import kotlinx.coroutines.*
 import kotlin.time.Duration.Companion.milliseconds
@@ -13,7 +13,7 @@ fun main(): Unit = runBlocking {
 
     launch {
         withContext(Dispatchers.IO) {
-            delay(5500.milliseconds)
+            delay(2500.milliseconds)
             a.cancel()
             println("Finished")
         }
